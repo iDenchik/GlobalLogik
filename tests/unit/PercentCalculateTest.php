@@ -20,22 +20,22 @@ class PercentCalculateTest extends Unit
      */
     public function testSuccess()
     {
-        /** @var PercentCalculateDTO|MockObject $publisher */
-        $percent = $this->getMockBuilder(PercentCalculateDTO::class)
+        /** @var PercentCalculateDTO|MockObject $percentCalculateDTO */
+        $percentCalculateDTO = $this->getMockBuilder(PercentCalculateDTO::class)
             ->disableOriginalConstructor()
             ->setMethods(['getRate', 'getSum', 'getYear'])
             ->getMock();
     
-        $percent->method('getRate')
+        $percentCalculateDTO->method('getRate')
             ->willReturn(10);
-        $percent->method('getSum')
+        $percentCalculateDTO->method('getSum')
             ->willReturn(4000);
-        $percent->method('getYear')
+        $percentCalculateDTO->method('getYear')
             ->willReturn(4);
         
-        $exportService = new PercentCalculator();
+        $percentCalculator = new PercentCalculator();
         
-        $this->assertEquals($exportService->getPercent($percent), 1100);
+        $this->assertEquals($percentCalculator->getPercent($percentCalculateDTO), 1100);
     }
     
     /**
