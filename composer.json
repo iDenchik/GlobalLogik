@@ -1,0 +1,26 @@
+{
+    "name": "test/test",
+    "description": "test project",
+    "authors": [
+        {
+            "name": "iDenchik",
+            "email": "pochtagdi@mail.ru"
+        }
+    ],
+    "require": {
+        "illuminate/container": "^5.8",
+        "codeception/codeception": "^2.4",
+        "codeception/mockery-module": "^0.2.3",
+        "fzaninotto/faker": "1.8.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Services\\": "services/",
+            "Controllers\\": "controllers/",
+            "Contracts\\": "contracts/",
+            "Dto\\": "dto/",
+            "Tests\\": "tests/",
+            "Tests\\Unit\\": "tests/unit"
+        }
+    }
+}
